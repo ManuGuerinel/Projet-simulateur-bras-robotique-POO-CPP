@@ -1,0 +1,22 @@
+
+Réponses aux questions de l'exercice 1 : 
+----------------------------------------
+
+1.a. Pourquoi le destructeur doit-il être virtual ?
+Si une classe de base n'a pas de destructeur virtuel, la destruction d'un objet dérivé via un pointeur de base entraîne un comportement indéfini (souvent une fuite de mémoire car le destructeur de la classe dérivée n'est jamais appelé).
+
+    Exemple : 
+    CJoint* ptr = new CJointRevolute(0, -1, 1, 0.5);
+    delete ptr; // Si ~CJoint() n'est pas virtual, ~CJointRevolute() n'est pas appelé 
+
+
+1.b. Pourquoi setQ() ne peut-il pas être const ?
+La méthode setQ() a pour but de modifier l'état interne de l'objet (la variable q_). Le mot-clé const à la fin d'une méthode garantit au compilateur qu'elle ne modifiera aucun attribut de la classe. C'est pourquoi les accesseurs (getQ(), getTransform()) sont const, car ils se contentent de lire l'état.
+
+2.a. Ligature dynamique (Dynamic Binding)
+Grâce au mot-clé virtual, C++ utilise une "V-Table" (table de fonctions virtuelles). À l'exécution, en faisant ptr->getTransform() avec ptr de type CJoint* mais pointant vers un CJointRevolute, c'est bien la matrice de rotation qui sera calculée.
+
+Et si ce n'était pas virtual ? Le compilateur utiliserait le type du pointeur (la classe de base CJoint). Comme la méthode est = 0 (pure), le code refuserait tout simplement de compiler
+
+2.b. Pourquoi utiliser clone() plutôt que le constructeur de copie dans CBras ?
+La classe CBras va contenir une liste de joints abstraits : std::vector<std::unique_ptr<CJoint>>. Si on essayait de faire une copie d'un élément avec CJoint(*ptr), on subirait le problème du Slicing (troncature) : on ne copierait que la partie CJoint, en perdant les spécificités de CJointRevolute (comme dx_). La méthode polymorphe clone() permet à chaque objet dérivé de se copier lui-même correctement.
