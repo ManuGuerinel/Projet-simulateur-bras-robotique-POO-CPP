@@ -1,0 +1,26 @@
+
+
+
+
+
+
+
+1.a. Pourquoi addJoint() prend un unique_ptr par valeur et requiert std::move() à l'appel ?
+
+addJoint prend un std::unique_ptr par valeur pour transférer explicitement la propriété exclusive (ownership) de la mémoire au vecteur de la classe CBras. L'appel à std::move() est obligatoire car un unique_ptr ne peut pas être copié ; il doit être déplacé pour garantir qu'un seul pointeur gère cette ressource à la fois.
+
+1.b. Pourquoi CBras n'est-elle pas copiable par défaut ?
+La classe CBras contient un attribut std::vector<std::unique_ptr<CJoint>>. Comme les unique_ptr interdisent la copie pour maintenir la propriété unique, le vecteur qui les contient n'est pas copiable non plus. Par conséquent, le compilateur supprime automatiquement le constructeur de copie par défaut de CBras.
+
+1.c. Quel est le type de retour de operator<< et pourquoi retourner std::ostream& ?
+Le type de retour est une référence vers le flux de sortie std::ostream&. Cela permet le chaînage des appels à l'opérateur (par exemple : std::cout << bras << std::endl;), chaque appel renvoyant le flux modifié pour l'opération suivante.
+
+2.a. Comparer A * B (Eigen) à une boucle triple manuelle. Citer deux avantages concrets.
+L'utilisation de l'opérateur natif d'Eigen pour calculer T0​⋅T1​⋅⋅⋅Tn−1​ présente deux avantages majeurs par rapport à une boucle triple manuelle:
+
+    Lisibilité et sécurité : Le code est beaucoup plus concis et élimine les risques de bugs liés à la gestion manuelle des indices des matrices.
+
+    Performances : Eigen utilise l'évaluation paresseuse (lazy evaluation) et applique des optimisations bas niveau automatiquement (vectorisation SIMD, gestion du cache processeur), rendant le calcul bien plus rapide.
+
+2.b. Quelle méthode de pinocchio::SE3 retourne la Eigen::Matrix4d équivalente ? Comment comparer les deux résultats numériquement ?
+La méthode de pinocchio::SE3 qui retourne une Eigen::Matrix4d est .toHomogeneousMatrix(). Pour comparer numériquement ce résultat avec notre matrice, on utilise la méthode .isApprox() d'Eigen, qui compare les éléments avec une tolérance pour pallier les erreurs d'arrondis des flottants (ex: ma_matrice.isApprox(mat_pinocchio, 1e-10)).
