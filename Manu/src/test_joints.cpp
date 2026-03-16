@@ -1,5 +1,10 @@
 #include <pinocchio/multibody/fwd.hpp>
 #include <pinocchio/spatial/se3.hpp>
+#include <pinocchio/parsers/urdf.hpp>
+#include <pinocchio/multibody/model.hpp>
+#include <pinocchio/multibody/data.hpp>
+#include <pinocchio/algorithm/kinematics.hpp>
+
 #include <iostream>
 
 #include "CJoint.hpp"
@@ -41,4 +46,17 @@ int main() {
     CJointPrismatic Q2(1);
     T = Q2.getTransform();
     std::cout << "getTransform (d = 1) : " << std::endl << T << std::endl;
+
+    // bonus 
+    pinocchio::Model model;
+    pinocchio::urdf::buildModel("urdf/ur5.urdf", model);
+
+    pinocchio::Data data(model);
+
+    Eigen::VectorXd q = Eigen::VectorXd::Zero(model.nq);
+
+    pinocchio::forwardKinematics(model, data, q);
+
+    std::cout << "UR5 Model : " << sdt::endl << "Transformation joint 1 :" << std::endl;
+    std::cout << data.oMi[1].toHomogeneousMatrix() << std::endl;
 }
