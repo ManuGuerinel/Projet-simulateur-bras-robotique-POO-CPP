@@ -8,14 +8,14 @@ using Mat4 = Eigen::Matrix4d;
 
 class CJoint {
     private:
-        double q_;
         double qMin_;
         double qMax_;
+        double q_;
 
     public:
         //======== [constructeur ]===============
-        // Cjoint();
-        CJoint(double q=0, double qMin=-1e6, double qMax=1e6) : q_(q), qMin_(qMin), qMax_(qMax) {}
+        CJoint();
+        CJoint(double qMin, double qMax, double q);
 
         //======== [ methode ]===================
         virtual Mat4 getTransform() const = 0;
@@ -24,6 +24,8 @@ class CJoint {
 
         //======== [ accesseur ] ================
         double getQ() const;
+        double getQMin() const;
+        double getQMax() const;
 
         //======== [ setters ] ==================
         void setQ(double q);

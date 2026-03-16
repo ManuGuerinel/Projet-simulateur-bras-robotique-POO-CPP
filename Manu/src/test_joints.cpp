@@ -18,7 +18,7 @@ int main() {
     double dx = 0.5;
 
     CJoint* pJoint;
-    CJointRevolute Q1(theta,dx);
+    CJointRevolute Q1(theta, dx, -PI, PI);
     pJoint = &Q1;
 
     Mat4 T = pJoint->getTransform();
@@ -57,6 +57,6 @@ int main() {
 
     pinocchio::forwardKinematics(model, data, q);
 
-    std::cout << "UR5 Model : " << sdt::endl << "Transformation joint 1 :" << std::endl;
+    std::cout << "UR5 Model : " << std::endl << "Transformation joint 1 :" << std::endl;
     std::cout << data.oMi[1].toHomogeneousMatrix() << std::endl;
 }

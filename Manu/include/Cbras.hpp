@@ -15,16 +15,19 @@ class CBras {
     public:
         //============ [ constructeur ] ============
         CBras() = default;
+        CBras(const CBras& other);
+        CBras(CBras&& other);
 
         //============ [ methode ] =================
         void addJoint(std::unique_ptr<CJoint> joint);
         Mat4 computeFK();
 
         friend std::ostream& operator<<(std::ostream& os, const CBras& bras);
+        CBras& operator=(CBras&& other);
 
         //============= [ getters ] =================
         int getNbJoints() const;
-        CJoint& getJoint(size_t) const;
+        CJoint& getJoint(int i) const;
 };
 
 #endif

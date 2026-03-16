@@ -5,11 +5,11 @@
 
 class CJointPrismatic : public CJoint{
     private:
-        double dx_;
+        // double dx_;  // Not used for prismatic joint
 
     public:
         //======== [constructeur ]===============
-        CJointPrismatic(double q=0, double qMin=-1e6, double qMax=1e6) : CJoint(q,qMin,qMax) {}
+        CJointPrismatic(double qMin=-1e6, double qMax=1e6,double q=0) : CJoint(qMin,qMax,q) {}
 
         //======== [ methode ]===================
         Mat4 getTransform() const override;

@@ -10,7 +10,7 @@ class CJointRevolute : public CJoint{
     public:
 
         //======== [constructeur ]===============
-        CJointRevolute(double q=0, double dx=0, double qMin=-1e6, double qMax=1e6) : CJoint(q,qMin,qMax), dx_(dx) {}
+        CJointRevolute(double qMin=-1e6, double qMax=1e6, double q=0, double dx=0) : CJoint(qMin,qMax,q), dx_(dx) {}
 
         //======== [ methode ]===================
         Mat4 getTransform() const override;

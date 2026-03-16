@@ -1,15 +1,28 @@
 #include "CJoint.hpp"
 
 //======== [ constructeur ]===============
-// CJoint::CJoint(){
-//     q_ = 0;
-//     qMax_ = 100000;
-//     qMin_ = -100000;
-// }
+CJoint::CJoint(){
+    q_ = 0;
+    qMax_ = 100000;
+    qMin_ = -100000;
+}
 
+CJoint::CJoint(double qMin, double qMax, double q){
+    q_ = q;
+    qMax_ = qMax;
+    qMin_ = qMin;
+}
 //======== [ getters ] ===================
 double CJoint::getQ() const{
     return q_;
+}
+
+double CJoint::getQMin() const{
+    return qMin_;
+}
+
+double CJoint::getQMax() const{
+    return qMax_;
 }
 
 //======== [ setters ] ===================
