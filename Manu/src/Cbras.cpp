@@ -2,20 +2,21 @@
 #include <Eigen/Dense>
 #include <vector>
 #include <memory>
+#include <random>
 #include "../include/CJoint.hpp"
 
 using Mat4 = Eigen::Matrix4d;
 
-// //=========== [ constructeur ] =============
-// CBras::CBras(const CBras& other){
-//     // constructeur de copie, dynamique
-//     for(int i=0; i<getNbJoints(); i++){
-//         addJoint(other.getJoint(i)->clone());
-//     }
-//     return other;
-// }
+//=========== [ constructeur ] =============
+CBras::CBras(const CBras& other){
+    // constructeur de copie, dynamique
+    for(int i=0; i<other.getNbJoints(); i++){
+        addJoint(other.getJoint(i).clone());        // clone permet de copier le bon type dynamiquement, il est fait sur chaque joint car il y a un smartpointeur par joint (non copiable)
+    }
+}
 
-// CBras::CBras(CBras&& other) noexcept {
+// pas necessaire????
+// CBras::CBras(CBras&& other) {
 //     // constructeur de deplacement
 //     joints_ = std::move(other.joints_);
 // }
@@ -33,18 +34,54 @@ Mat4 CBras::computeFK() {
     return T;
 }
 
+Eigen::VectorXd CBras::randomQ() const{ // q aleatoire dans les bornes
+    Eigen::VectorXd Q(this->getNbJoints());
+
+    std::random_device rd;
+    std::mt19937 gen(rd());
+
+    for(size_t i = 0; i < this->joints_.size(); i++){
+        double qmin = joints_[i]->getQMin();
+        double qmax = joints_[i]->getQMax();
+
+        std::uniform_real_distribution<double> q(qmin, qmax);
+        Q[i] = q(gen);
+    }
+    return Q;
+}
+
+
 //============= [ getters ] =================
 int CBras::getNbJoints() const {
     return joints_.size();
 }
 
 CJoint& CBras::getJoint(int i) const {
-    if(i >= this->getNbJoints()){
+    if(i >= this->getNbJoints() || i<0){
         char msg[50];
         sprintf(msg, "Index joint invalide (%d > %d)", i, this->getNbJoints()-1);
         throw std::out_of_range(msg);
     }
     return *joints_[i];
+}
+
+Eigen::VectorXd CBras::getQ() const{   // q courants
+    int n = this->getNbJoints();
+    Eigen::VectorXd q(n);
+    for(int i=0; i<n; i++){
+        q[i] = this->joints_[i]->getQ();
+    }
+    return q;
+} 
+
+// =========== [ setters ] ===================
+void CBras::setQ(const Eigen::VectorXd& q){ // leve invalid_argument si taille incorrecte
+    if(q.size() != this->getNbJoints()){
+        throw std::invalid_argument("Taille de q incorrecte");
+    }
+    for(size_t i = 0; i < this->joints_.size(); i++){
+        this->joints_[i]->setQ(q[i]);
+    }
 }
 
 //============ [ surcharge operateur ]========
@@ -75,11 +112,9 @@ std::ostream& operator<<(std::ostream& os, const CBras& bras)
     return os;
 }
 
-// CBras& CBras::operator=(CBras&& other) noexcept{
-//     // operateur de deplacement
-//     if(this != &other)
-//     {
-//         joints_ = std::move(other.joints_);
-//     }
-//     return *this;
-// }
+CBras& CBras::operator=(CBras other){
+    // operateur d'affectation par copie
+    //copy-and-swap consiste a copier l’objet puis echanger son contenu avec l’objet courant. Il garantit la strong exception safety : en cas d’echec, l’objet initial reste inchangé.  
+    std::swap(joints_, other.joints_);
+    return *this;
+}

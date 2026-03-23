@@ -43,16 +43,29 @@ EX2_OBJ = $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(EX2_SRC))
 EX2 = $(EXE_DIR)/exercice2
 
 # -----------------------------
+# EXECUTABLE EXERCICE 3
+# -----------------------------
+
+EX3_SRC = $(SRC_DIR)/test_vector.cpp
+EX3_OBJ = $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(EX3_SRC))
+
+EX3 = $(EXE_DIR)/exercice3
+
+# -----------------------------
 # BUILD
 # -----------------------------
 
-all: $(EX1) $(EX2)
+all: $(EX1) $(EX2) $(EX3)
 
 $(EX1): $(COMMON_OBJ) $(EX1_OBJ)
 	@mkdir -p $(EXE_DIR)
 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LIBS)
 
 $(EX2): $(COMMON_OBJ) $(EX2_OBJ)
+	@mkdir -p $(EXE_DIR)
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LIBS)
+
+$(EX3): $(COMMON_OBJ) $(EX3_OBJ)
 	@mkdir -p $(EXE_DIR)
 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LIBS)
 
