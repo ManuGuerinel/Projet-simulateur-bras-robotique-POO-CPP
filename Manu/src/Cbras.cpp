@@ -6,19 +6,19 @@
 
 using Mat4 = Eigen::Matrix4d;
 
-//=========== [ constructeur ] =============
-CBras::CBras(const CBras& other){
-    // constructeur de copie, dynamique
-    for(int i=0; i<getNbJoints(); i++){
-        addJoint(other.getJoint(i)->clone());
-    }
-    return other;
-}
+// //=========== [ constructeur ] =============
+// CBras::CBras(const CBras& other){
+//     // constructeur de copie, dynamique
+//     for(int i=0; i<getNbJoints(); i++){
+//         addJoint(other.getJoint(i)->clone());
+//     }
+//     return other;
+// }
 
-CBras::CBras(CBras&& other) noexcept {
-    // constructeur de deplacement
-    joints_ = std::move(other.joints_);
-}
+// CBras::CBras(CBras&& other) noexcept {
+//     // constructeur de deplacement
+//     joints_ = std::move(other.joints_);
+// }
 
 //============ [ methode ] =================
 void CBras::addJoint(std::unique_ptr<CJoint> joint){
@@ -75,11 +75,11 @@ std::ostream& operator<<(std::ostream& os, const CBras& bras)
     return os;
 }
 
-CBras& CBras::operator=(CBras&& other) noexcept{
-    // operateur de deplacement
-    if(this != &other)
-    {
-        joints_ = std::move(other.joints_);
-    }
-    return *this;
-}
+// CBras& CBras::operator=(CBras&& other) noexcept{
+//     // operateur de deplacement
+//     if(this != &other)
+//     {
+//         joints_ = std::move(other.joints_);
+//     }
+//     return *this;
+// }

@@ -7,35 +7,40 @@ CXXFLAGS = -std=c++17 -Wall -Iinclude $(shell pkg-config --cflags pinocchio eige
 # Librairies
 LIBS = $(shell pkg-config --libs pinocchio eigen3)
 
+# Dossiers
+OBJ_DIR = bin
+EXE_DIR = build
+SRC_DIR = src
+
 # -----------------------------
 # FICHIERS COMMUNS AU PROJET
 # -----------------------------
 
 COMMON_SRC = \
-	src/CJoint.cpp \
-	src/CjointRevolut.cpp \
-	src/CjointPrismatic.cpp \
-	src/Cbras.cpp
+	$(SRC_DIR)/CJoint.cpp \
+	$(SRC_DIR)/CjointRevolut.cpp \
+	$(SRC_DIR)/CjointPrismatic.cpp \
+	$(SRC_DIR)/Cbras.cpp
 
-COMMON_OBJ = $(COMMON_SRC:.cpp=.o)
+COMMON_OBJ = $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(COMMON_SRC))
 
 # -----------------------------
 # EXECUTABLE EXERCICE 1
 # -----------------------------
 
-EX1_SRC = src/test_joints.cpp
-EX1_OBJ = $(EX1_SRC:.cpp=.o)
+EX1_SRC = $(SRC_DIR)/test_joints.cpp
+EX1_OBJ = $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(EX1_SRC))
 
-EX1 = exercice1
+EX1 = $(EXE_DIR)/exercice1
 
 # -----------------------------
 # EXECUTABLE EXERCICE 2
 # -----------------------------
 
-EX2_SRC = src/test_bras.cpp
-EX2_OBJ = $(EX2_SRC:.cpp=.o)
+EX2_SRC = $(SRC_DIR)/test_bras.cpp
+EX2_OBJ = $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(EX2_SRC))
 
-EX2 = exercice2
+EX2 = $(EXE_DIR)/exercice2
 
 # -----------------------------
 # BUILD
@@ -44,15 +49,18 @@ EX2 = exercice2
 all: $(EX1) $(EX2)
 
 $(EX1): $(COMMON_OBJ) $(EX1_OBJ)
+	@mkdir -p $(EXE_DIR)
 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LIBS)
 
 $(EX2): $(COMMON_OBJ) $(EX2_OBJ)
+	@mkdir -p $(EXE_DIR)
 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LIBS)
 
-# Compilation générique
-%.o: %.cpp
+# Compilation vers bin/
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
+	@mkdir -p $(OBJ_DIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # Nettoyage
 clean:
-	rm -f src/*.o $(EX1) $(EX2)
+	rm -rf $(OBJ_DIR) $(EXE_DIR)
