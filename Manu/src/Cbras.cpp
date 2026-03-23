@@ -112,9 +112,8 @@ std::ostream& operator<<(std::ostream& os, const CBras& bras)
     return os;
 }
 
-CBras& CBras::operator=(CBras other){
-    // operateur d'affectation par copie
-    //copy-and-swap consiste a copier l’objet puis echanger son contenu avec l’objet courant. Il garantit la strong exception safety : en cas d’echec, l’objet initial reste inchangé.  
-    std::swap(joints_, other.joints_);
+CBras& CBras::operator=(const CBras& other) {
+    CBras tmp(other);                // copie via constructeur de copie
+    std::swap(joints_, tmp.joints_); // swap
     return *this;
 }

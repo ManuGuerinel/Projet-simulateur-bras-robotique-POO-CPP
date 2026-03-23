@@ -25,7 +25,7 @@ class CBras {
         Eigen::VectorXd randomQ() const; // q aleatoire dans les bornes
 
         friend std::ostream& operator<<(std::ostream& os, const CBras& bras);
-        CBras& operator=(CBras other);                          // operateur d'affectation par copie
+        CBras& operator=(const CBras& other);                          // operateur d'affectation par copie
         CBras& operator=(CBras&& other) noexcept = default;     // operateur d'affectation de deplacement
 
         //============= [ getters ] =================
