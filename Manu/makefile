@@ -52,10 +52,19 @@ EX3_OBJ = $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(EX3_SRC))
 EX3 = $(EXE_DIR)/exercice3
 
 # -----------------------------
+# EXECUTABLE EXERCICE 4
+# -----------------------------
+
+EX4_SRC = $(SRC_DIR)/main.cpp
+EX4_OBJ = $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(EX4_SRC))
+
+EX4 = $(EXE_DIR)/main
+
+# -----------------------------
 # BUILD
 # -----------------------------
 
-all: $(EX1) $(EX2) $(EX3)
+all: $(EX1) $(EX2) $(EX3) $(EX4)
 
 $(EX1): $(COMMON_OBJ) $(EX1_OBJ)
 	@mkdir -p $(EXE_DIR)
@@ -69,10 +78,26 @@ $(EX3): $(COMMON_OBJ) $(EX3_OBJ)
 	@mkdir -p $(EXE_DIR)
 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LIBS)
 
+$(EX4): $(COMMON_OBJ) $(EX4_OBJ)
+	@mkdir -p $(EXE_DIR)
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LIBS)
+
 # Compilation vers bin/
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	@mkdir -p $(OBJ_DIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+
+# -----------------------------
+# VALGRIND
+# -----------------------------
+
+valgrind_ex3: $(EX3)
+	valgrind --leak-check=full --track-origins=yes ./$(EX3)
+
+valgrind_main: $(EX4)
+	valgrind --leak-check=full --track-origins=yes ./$(EX4)
+
 
 # Nettoyage
 clean:

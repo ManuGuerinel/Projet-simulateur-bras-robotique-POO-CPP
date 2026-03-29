@@ -7,6 +7,7 @@
 #include "CjointPrismatic.hpp"
 #include "CjointRevolut.hpp"
 #include "Cbras.hpp"
+#include "CVector.hpp"
 
 // ============================================================
 // Utilitaires
@@ -268,6 +269,24 @@ void test_enchainement_regles() {
 }
 
 // ============================================================
+// test sur template vecteur
+// ============================================================
+void test_vecteur() {
+     std::cout << "\n[Vecteur] produit scalaire et norme\n";
+     CVecteur<int,3> u;
+     u[0] = 1;
+     u[1] = 0;
+     u[2] = 0;
+     CVecteur<int,3> v;
+     v[0] = 0;
+     v[1] = 1;
+     v[2] = 0;
+
+     TEST("produit scalaire", u.dot(v) == 0);
+     TEST("Norme", u.norm() == 1);
+}
+
+// ============================================================
 // main
 // ============================================================
 int main() {
@@ -281,6 +300,7 @@ int main() {
     test_operateur_affectation_deplacement();
     test_destructeur();
     test_enchainement_regles();
+    test_vecteur();
 
     std::cout << "\n=============================================\n";
     std::cout << "  Résultat : " << tests_passed << " passé(s), "

@@ -27,7 +27,7 @@ double CJoint::getQMax() const{
 
 //======== [ setters ] ===================
 void CJoint::setQ(double q){
-    if(q < qMax_ && q > qMin_){
+    if(q <= qMax_ && q >= qMin_){
         q_ = q;
     }else{
         throw std::out_of_range("q > qmax ou q < qmin");
