@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classCJoint.html" title="Classe abstraite représentant un joint générique." alt="" coords="5,31,65,57"/>
+<area shape="rect" id="node2" href="$classCJointPrismatic.html" title="Joint de type prismatic (translation)" alt="" coords="113,5,235,32"/>
+<area shape="rect" id="node3" href="$classCJointRevolute.html" title="Joint de type revolute (rotation)" alt="" coords="115,56,233,83"/>
+</map>

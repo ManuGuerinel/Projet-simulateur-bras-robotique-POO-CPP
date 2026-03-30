@@ -1,0 +1,4 @@
+<map id="CJointPrismatic" name="CJointPrismatic">
+<area shape="rect" id="node1" title="Joint de type prismatic (translation)" alt="" coords="5,292,163,428"/>
+<area shape="rect" id="node2" href="$classCJoint.html" title="Classe abstraite représentant un joint générique." alt="" coords="15,5,153,244"/>
+</map>

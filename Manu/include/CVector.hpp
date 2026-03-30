@@ -7,7 +7,13 @@
 #include <Eigen/Dense>
 
 template<typename T, std::size_t N>
-
+/**
+ * @class CVecteur
+ * @brief Classe template représentant un vecteur de taille N
+ *
+ * @tparam T Type des éléments
+ * @tparam N Taille du vecteur
+ */
 class CVecteur{
 private:
     std::array<T, N> data_;

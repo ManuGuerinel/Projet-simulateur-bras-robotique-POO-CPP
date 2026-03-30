@@ -1,0 +1,155 @@
+\hypertarget{classCVecteur}{}\doxysection{CVecteur$<$ T, N $>$ Class Template Reference}
+\label{classCVecteur}\index{CVecteur$<$ T, N $>$@{CVecteur$<$ T, N $>$}}
+
+
+Classe template représentant un vecteur de taille N.  
+
+
+
+
+{\ttfamily \#include $<$CVector.\+hpp$>$}
+
+
+
+Collaboration diagram for CVecteur$<$ T, N $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{classCVecteur__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCVecteur_aab13964223b55512febfd08befe59f0f}{CVecteur}} ()
+\item 
+\mbox{\hyperlink{classCVecteur_a09e1548e0cd50642b1b5d3b883c4be18}{CVecteur}} (const std\+::array$<$ T, N $>$ \&data)
+\item 
+T \& \mbox{\hyperlink{classCVecteur_ac1c0b724b983102764935db8bd16fbce}{operator\mbox{[}$\,$\mbox{]}}} (std\+::size\+\_\+t i)
+\item 
+const T \& \mbox{\hyperlink{classCVecteur_a6a17f9fef55325e0f86fdb3bee8549c5}{operator\mbox{[}$\,$\mbox{]}}} (std\+::size\+\_\+t i) const
+\item 
+\mbox{\hyperlink{classCVecteur}{CVecteur}} \mbox{\hyperlink{classCVecteur_a2a97ff81ecd420bafe5128afc60468da}{operator+}} (const \mbox{\hyperlink{classCVecteur}{CVecteur}} \&other) const
+\item 
+\mbox{\hyperlink{classCVecteur}{CVecteur}} \mbox{\hyperlink{classCVecteur_aeb7dc658ea7329c7ac82664abd072905}{operator-\/}} (const \mbox{\hyperlink{classCVecteur}{CVecteur}} \&other) const
+\item 
+\mbox{\hyperlink{classCVecteur}{CVecteur}} \mbox{\hyperlink{classCVecteur_a9711349a5020a7e757af70921e9b6263}{operator$\ast$}} (T scalar) const
+\item 
+T \mbox{\hyperlink{classCVecteur_a3814f10cda8e9f9a7ff78c61ba9855da}{dot}} (const \mbox{\hyperlink{classCVecteur}{CVecteur}} \&other) const
+\item 
+T \mbox{\hyperlink{classCVecteur_ab591754871d902babfa872b5a83739ec}{norm}} () const
+\item 
+Eigen\+::\+Matrix$<$ T, N, 1 $>$ \mbox{\hyperlink{classCVecteur_a4c279940192255034cd0dcbc548211cf}{to\+Eigen}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classCVecteur_a35bf7465bfe2a01c14365cd5ce218906}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{classCVecteur}{CVecteur}} \&v)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T, std\+::size\+\_\+t N$>$\newline
+class CVecteur$<$ T, N $>$}
+
+Classe template représentant un vecteur de taille N. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type des éléments \\
+\hline
+{\em N} & Taille du vecteur \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCVecteur_aab13964223b55512febfd08befe59f0f}\label{classCVecteur_aab13964223b55512febfd08befe59f0f}} 
+\index{CVecteur$<$ T, N $>$@{CVecteur$<$ T, N $>$}!CVecteur@{CVecteur}}
+\index{CVecteur@{CVecteur}!CVecteur$<$ T, N $>$@{CVecteur$<$ T, N $>$}}
+\doxysubsubsection{\texorpdfstring{CVecteur()}{CVecteur()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , std\+::size\+\_\+t N$>$ \\
+\mbox{\hyperlink{classCVecteur}{CVecteur}}$<$ T, N $>$\+::\mbox{\hyperlink{classCVecteur}{CVecteur}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classCVecteur_a09e1548e0cd50642b1b5d3b883c4be18}\label{classCVecteur_a09e1548e0cd50642b1b5d3b883c4be18}} 
+\index{CVecteur$<$ T, N $>$@{CVecteur$<$ T, N $>$}!CVecteur@{CVecteur}}
+\index{CVecteur@{CVecteur}!CVecteur$<$ T, N $>$@{CVecteur$<$ T, N $>$}}
+\doxysubsubsection{\texorpdfstring{CVecteur()}{CVecteur()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , std\+::size\+\_\+t N$>$ \\
+\mbox{\hyperlink{classCVecteur}{CVecteur}}$<$ T, N $>$\+::\mbox{\hyperlink{classCVecteur}{CVecteur}} (\begin{DoxyParamCaption}\item[{const std\+::array$<$ T, N $>$ \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCVecteur_a3814f10cda8e9f9a7ff78c61ba9855da}\label{classCVecteur_a3814f10cda8e9f9a7ff78c61ba9855da}} 
+\index{CVecteur$<$ T, N $>$@{CVecteur$<$ T, N $>$}!dot@{dot}}
+\index{dot@{dot}!CVecteur$<$ T, N $>$@{CVecteur$<$ T, N $>$}}
+\doxysubsubsection{\texorpdfstring{dot()}{dot()}}
+{\footnotesize\ttfamily template$<$typename T , std\+::size\+\_\+t N$>$ \\
+T \mbox{\hyperlink{classCVecteur}{CVecteur}}$<$ T, N $>$\+::dot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCVecteur}{CVecteur}}$<$ T, N $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classCVecteur_ab591754871d902babfa872b5a83739ec}\label{classCVecteur_ab591754871d902babfa872b5a83739ec}} 
+\index{CVecteur$<$ T, N $>$@{CVecteur$<$ T, N $>$}!norm@{norm}}
+\index{norm@{norm}!CVecteur$<$ T, N $>$@{CVecteur$<$ T, N $>$}}
+\doxysubsubsection{\texorpdfstring{norm()}{norm()}}
+{\footnotesize\ttfamily template$<$typename T , std\+::size\+\_\+t N$>$ \\
+T \mbox{\hyperlink{classCVecteur}{CVecteur}}$<$ T, N $>$\+::norm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classCVecteur_a9711349a5020a7e757af70921e9b6263}\label{classCVecteur_a9711349a5020a7e757af70921e9b6263}} 
+\index{CVecteur$<$ T, N $>$@{CVecteur$<$ T, N $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!CVecteur$<$ T, N $>$@{CVecteur$<$ T, N $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily template$<$typename T , std\+::size\+\_\+t N$>$ \\
+\mbox{\hyperlink{classCVecteur}{CVecteur}} \mbox{\hyperlink{classCVecteur}{CVecteur}}$<$ T, N $>$\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{T}]{scalar }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classCVecteur_a2a97ff81ecd420bafe5128afc60468da}\label{classCVecteur_a2a97ff81ecd420bafe5128afc60468da}} 
+\index{CVecteur$<$ T, N $>$@{CVecteur$<$ T, N $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!CVecteur$<$ T, N $>$@{CVecteur$<$ T, N $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily template$<$typename T , std\+::size\+\_\+t N$>$ \\
+\mbox{\hyperlink{classCVecteur}{CVecteur}} \mbox{\hyperlink{classCVecteur}{CVecteur}}$<$ T, N $>$\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCVecteur}{CVecteur}}$<$ T, N $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classCVecteur_aeb7dc658ea7329c7ac82664abd072905}\label{classCVecteur_aeb7dc658ea7329c7ac82664abd072905}} 
+\index{CVecteur$<$ T, N $>$@{CVecteur$<$ T, N $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!CVecteur$<$ T, N $>$@{CVecteur$<$ T, N $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily template$<$typename T , std\+::size\+\_\+t N$>$ \\
+\mbox{\hyperlink{classCVecteur}{CVecteur}} \mbox{\hyperlink{classCVecteur}{CVecteur}}$<$ T, N $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCVecteur}{CVecteur}}$<$ T, N $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classCVecteur_ac1c0b724b983102764935db8bd16fbce}\label{classCVecteur_ac1c0b724b983102764935db8bd16fbce}} 
+\index{CVecteur$<$ T, N $>$@{CVecteur$<$ T, N $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!CVecteur$<$ T, N $>$@{CVecteur$<$ T, N $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , std\+::size\+\_\+t N$>$ \\
+T\& \mbox{\hyperlink{classCVecteur}{CVecteur}}$<$ T, N $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classCVecteur_a6a17f9fef55325e0f86fdb3bee8549c5}\label{classCVecteur_a6a17f9fef55325e0f86fdb3bee8549c5}} 
+\index{CVecteur$<$ T, N $>$@{CVecteur$<$ T, N $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!CVecteur$<$ T, N $>$@{CVecteur$<$ T, N $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , std\+::size\+\_\+t N$>$ \\
+const T\& \mbox{\hyperlink{classCVecteur}{CVecteur}}$<$ T, N $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classCVecteur_a4c279940192255034cd0dcbc548211cf}\label{classCVecteur_a4c279940192255034cd0dcbc548211cf}} 
+\index{CVecteur$<$ T, N $>$@{CVecteur$<$ T, N $>$}!toEigen@{toEigen}}
+\index{toEigen@{toEigen}!CVecteur$<$ T, N $>$@{CVecteur$<$ T, N $>$}}
+\doxysubsubsection{\texorpdfstring{toEigen()}{toEigen()}}
+{\footnotesize\ttfamily template$<$typename T , std\+::size\+\_\+t N$>$ \\
+Eigen\+::\+Matrix$<$T, N, 1$>$ \mbox{\hyperlink{classCVecteur}{CVecteur}}$<$ T, N $>$\+::to\+Eigen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classCVecteur_a35bf7465bfe2a01c14365cd5ce218906}\label{classCVecteur_a35bf7465bfe2a01c14365cd5ce218906}} 
+\index{CVecteur$<$ T, N $>$@{CVecteur$<$ T, N $>$}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!CVecteur$<$ T, N $>$@{CVecteur$<$ T, N $>$}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily template$<$typename T , std\+::size\+\_\+t N$>$ \\
+std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classCVecteur}{CVecteur}}$<$ T, N $>$ \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{CVector_8hpp}{CVector.\+hpp}}\end{DoxyCompactItemize}

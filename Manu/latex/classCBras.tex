@@ -1,0 +1,159 @@
+\hypertarget{classCBras}{}\doxysection{CBras Class Reference}
+\label{classCBras}\index{CBras@{CBras}}
+
+
+Représente un bras robotique.  
+
+
+
+
+{\ttfamily \#include $<$Cbras.\+hpp$>$}
+
+
+
+Collaboration diagram for CBras\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classCBras__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCBras_a6502292c6a0a461ed30a63b3a5372c80}{CBras}} ()=default
+\item 
+\mbox{\hyperlink{classCBras_a508287e9f0e60782588d85c8100bb8e5}{CBras}} (const \mbox{\hyperlink{classCBras}{CBras}} \&other)
+\item 
+\mbox{\hyperlink{classCBras_aa645df904a36949462281ca33b6c0672}{CBras}} (\mbox{\hyperlink{classCBras}{CBras}} \&\&other) noexcept=default
+\item 
+void \mbox{\hyperlink{classCBras_a81462772073ae08fc7732a3445a52e05}{add\+Joint}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCJoint}{CJoint}} $>$ joint)
+\item 
+\mbox{\hyperlink{Cbras_8hpp_acd7c3150c4fb02ee1b656c52e39d1282}{Mat4}} \mbox{\hyperlink{classCBras_a1e16304c13e17b1e82696bbd5344b9b7}{compute\+FK}} ()
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classCBras_ab794339de6725bc708990f8d0d339d9e}{randomQ}} () const
+\item 
+\mbox{\hyperlink{classCBras}{CBras}} \& \mbox{\hyperlink{classCBras_a977d31dd3dfef0241c444e715063e4f8}{operator=}} (const \mbox{\hyperlink{classCBras}{CBras}} \&other)
+\item 
+\mbox{\hyperlink{classCBras}{CBras}} \& \mbox{\hyperlink{classCBras_a41aa7b6f20fb574189057f9eb9982121}{operator=}} (\mbox{\hyperlink{classCBras}{CBras}} \&\&other) noexcept=default
+\item 
+int \mbox{\hyperlink{classCBras_a0681da5857ed6650126f505e60f56937}{get\+Nb\+Joints}} () const
+\item 
+\mbox{\hyperlink{classCJoint}{CJoint}} \& \mbox{\hyperlink{classCBras_a6a5dc6a7b19abb7eeb085174bd809360}{get\+Joint}} (int i) const
+\item 
+Eigen\+::\+Vector\+Xd \mbox{\hyperlink{classCBras_a52f43a05a87133802d5bff286786fb68}{getQ}} () const
+\item 
+void \mbox{\hyperlink{classCBras_a1dcb8b2e655e38b3907dd3eb2aee2f7a}{setQ}} (const Eigen\+::\+Vector\+Xd \&q)
+\item 
+\mbox{\hyperlink{classCBras_abf569f5f657eb96920654fc312e13203}{$\sim$\+CBras}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classCBras_a051baf2bcf9cad8e48c4ae79464cda70}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{classCBras}{CBras}} \&bras)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Représente un bras robotique. 
+
+Contient une composition de joints. Chaque joint est possédé exclusivement par le bras. Les joints sont stockés dans un std\+::vector de unique\+\_\+ptr. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCBras_a6502292c6a0a461ed30a63b3a5372c80}\label{classCBras_a6502292c6a0a461ed30a63b3a5372c80}} 
+\index{CBras@{CBras}!CBras@{CBras}}
+\index{CBras@{CBras}!CBras@{CBras}}
+\doxysubsubsection{\texorpdfstring{CBras()}{CBras()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily CBras\+::\+CBras (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classCBras_a508287e9f0e60782588d85c8100bb8e5}\label{classCBras_a508287e9f0e60782588d85c8100bb8e5}} 
+\index{CBras@{CBras}!CBras@{CBras}}
+\index{CBras@{CBras}!CBras@{CBras}}
+\doxysubsubsection{\texorpdfstring{CBras()}{CBras()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily CBras\+::\+CBras (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCBras}{CBras}} \&}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCBras_aa645df904a36949462281ca33b6c0672}\label{classCBras_aa645df904a36949462281ca33b6c0672}} 
+\index{CBras@{CBras}!CBras@{CBras}}
+\index{CBras@{CBras}!CBras@{CBras}}
+\doxysubsubsection{\texorpdfstring{CBras()}{CBras()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily CBras\+::\+CBras (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCBras}{CBras}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{classCBras_abf569f5f657eb96920654fc312e13203}\label{classCBras_abf569f5f657eb96920654fc312e13203}} 
+\index{CBras@{CBras}!````~CBras@{$\sim$CBras}}
+\index{````~CBras@{$\sim$CBras}!CBras@{CBras}}
+\doxysubsubsection{\texorpdfstring{$\sim$CBras()}{~CBras()}}
+{\footnotesize\ttfamily CBras\+::$\sim$\+CBras (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCBras_a81462772073ae08fc7732a3445a52e05}\label{classCBras_a81462772073ae08fc7732a3445a52e05}} 
+\index{CBras@{CBras}!addJoint@{addJoint}}
+\index{addJoint@{addJoint}!CBras@{CBras}}
+\doxysubsubsection{\texorpdfstring{addJoint()}{addJoint()}}
+{\footnotesize\ttfamily void CBras\+::add\+Joint (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCJoint}{CJoint}} $>$}]{joint }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCBras_a1e16304c13e17b1e82696bbd5344b9b7}\label{classCBras_a1e16304c13e17b1e82696bbd5344b9b7}} 
+\index{CBras@{CBras}!computeFK@{computeFK}}
+\index{computeFK@{computeFK}!CBras@{CBras}}
+\doxysubsubsection{\texorpdfstring{computeFK()}{computeFK()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Cbras_8hpp_acd7c3150c4fb02ee1b656c52e39d1282}{Mat4}} CBras\+::compute\+FK (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCBras_a6a5dc6a7b19abb7eeb085174bd809360}\label{classCBras_a6a5dc6a7b19abb7eeb085174bd809360}} 
+\index{CBras@{CBras}!getJoint@{getJoint}}
+\index{getJoint@{getJoint}!CBras@{CBras}}
+\doxysubsubsection{\texorpdfstring{getJoint()}{getJoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCJoint}{CJoint}} \& CBras\+::get\+Joint (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classCBras_a0681da5857ed6650126f505e60f56937}\label{classCBras_a0681da5857ed6650126f505e60f56937}} 
+\index{CBras@{CBras}!getNbJoints@{getNbJoints}}
+\index{getNbJoints@{getNbJoints}!CBras@{CBras}}
+\doxysubsubsection{\texorpdfstring{getNbJoints()}{getNbJoints()}}
+{\footnotesize\ttfamily int CBras\+::get\+Nb\+Joints (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classCBras_a52f43a05a87133802d5bff286786fb68}\label{classCBras_a52f43a05a87133802d5bff286786fb68}} 
+\index{CBras@{CBras}!getQ@{getQ}}
+\index{getQ@{getQ}!CBras@{CBras}}
+\doxysubsubsection{\texorpdfstring{getQ()}{getQ()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd CBras\+::getQ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classCBras_a41aa7b6f20fb574189057f9eb9982121}\label{classCBras_a41aa7b6f20fb574189057f9eb9982121}} 
+\index{CBras@{CBras}!operator=@{operator=}}
+\index{operator=@{operator=}!CBras@{CBras}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCBras}{CBras}}\& CBras\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCBras}{CBras}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{classCBras_a977d31dd3dfef0241c444e715063e4f8}\label{classCBras_a977d31dd3dfef0241c444e715063e4f8}} 
+\index{CBras@{CBras}!operator=@{operator=}}
+\index{operator=@{operator=}!CBras@{CBras}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCBras}{CBras}} \& CBras\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCBras}{CBras}} \&}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCBras_ab794339de6725bc708990f8d0d339d9e}\label{classCBras_ab794339de6725bc708990f8d0d339d9e}} 
+\index{CBras@{CBras}!randomQ@{randomQ}}
+\index{randomQ@{randomQ}!CBras@{CBras}}
+\doxysubsubsection{\texorpdfstring{randomQ()}{randomQ()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xd CBras\+::randomQ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classCBras_a1dcb8b2e655e38b3907dd3eb2aee2f7a}\label{classCBras_a1dcb8b2e655e38b3907dd3eb2aee2f7a}} 
+\index{CBras@{CBras}!setQ@{setQ}}
+\index{setQ@{setQ}!CBras@{CBras}}
+\doxysubsubsection{\texorpdfstring{setQ()}{setQ()}}
+{\footnotesize\ttfamily void CBras\+::setQ (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xd \&}]{q }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classCBras_a051baf2bcf9cad8e48c4ae79464cda70}\label{classCBras_a051baf2bcf9cad8e48c4ae79464cda70}} 
+\index{CBras@{CBras}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!CBras@{CBras}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classCBras}{CBras}} \&}]{bras }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{Cbras_8hpp}{Cbras.\+hpp}}\item 
+src/\mbox{\hyperlink{Cbras_8cpp}{Cbras.\+cpp}}\end{DoxyCompactItemize}

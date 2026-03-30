@@ -5,7 +5,10 @@
 #include <Eigen/Dense>
 
 using Mat4 = Eigen::Matrix4d;
-
+/**
+ * @class CJoint
+ * @brief Classe abstraite représentant un joint générique
+ */
 class CJoint {
     private:
         double qMin_;

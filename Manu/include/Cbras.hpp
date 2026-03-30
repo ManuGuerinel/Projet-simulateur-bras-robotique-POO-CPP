@@ -7,7 +7,13 @@
 #include "CJoint.hpp"
 
 using Mat4 = Eigen::Matrix4d;
-
+/**
+ * @class CBras
+ * @brief Représente un bras robotique
+ *
+ * @details Contient une composition de joints. Chaque joint est possédé exclusivement par le bras.
+ * Les joints sont stockés dans un std::vector de unique_ptr.
+ */
 class CBras {
     private:
         std::vector<std::unique_ptr<CJoint>> joints_;

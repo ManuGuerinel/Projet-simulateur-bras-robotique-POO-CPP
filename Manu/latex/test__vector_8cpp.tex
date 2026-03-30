@@ -1,0 +1,112 @@
+\hypertarget{test__vector_8cpp}{}\doxysection{src/test\+\_\+vector.cpp File Reference}
+\label{test__vector_8cpp}\index{src/test\_vector.cpp@{src/test\_vector.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include \char`\"{}CJoint.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Cjoint\+Prismatic.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Cjoint\+Revolut.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Cbras.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}CVector.\+hpp\char`\"{}}\newline
+Include dependency graph for test\+\_\+vector.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{test__vector_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{test__vector_8cpp_a71a13a78fb259a674f0b65687fdb63de}{TEST}}(name,  expr)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{test__vector_8cpp_a66f2cf1ed7047920940b2ac46dd81720}{test\+\_\+constructeur\+\_\+copie}} ()
+\item 
+void \mbox{\hyperlink{test__vector_8cpp_a41aa48850b650a7b0818256ba088bd0c}{test\+\_\+constructeur\+\_\+deplacement}} ()
+\item 
+void \mbox{\hyperlink{test__vector_8cpp_a37abb1f4c6342a9c4c3c7b04470fd890}{test\+\_\+operateur\+\_\+affectation\+\_\+copie}} ()
+\item 
+void \mbox{\hyperlink{test__vector_8cpp_ad7a1e0a7053a593a7e41181593fdb9cd}{test\+\_\+operateur\+\_\+affectation\+\_\+deplacement}} ()
+\item 
+void \mbox{\hyperlink{test__vector_8cpp_abcd740c9afb61d692bed325b51d52781}{test\+\_\+destructeur}} ()
+\item 
+void \mbox{\hyperlink{test__vector_8cpp_abf5ad0293edd987044597e8557d2424a}{test\+\_\+enchainement\+\_\+regles}} ()
+\item 
+void \mbox{\hyperlink{test__vector_8cpp_aa00e6658e5e3c9af28808b1cbbcfa0b9}{test\+\_\+vecteur}} ()
+\item 
+int \mbox{\hyperlink{test__vector_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{test__vector_8cpp_a71a13a78fb259a674f0b65687fdb63de}\label{test__vector_8cpp_a71a13a78fb259a674f0b65687fdb63de}} 
+\index{test\_vector.cpp@{test\_vector.cpp}!TEST@{TEST}}
+\index{TEST@{TEST}!test\_vector.cpp@{test\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST}{TEST}}
+{\footnotesize\ttfamily \#define TEST(\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{expr }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{        bool \_ok = (expr); \(\backslash\)}
+\DoxyCodeLine{        std::cout << (\_ok ? \textcolor{stringliteral}{"{}  [PASS] "{}} : \textcolor{stringliteral}{"{}  [FAIL] "{}}) << name << \textcolor{stringliteral}{"{}\(\backslash\)n"{}}; \(\backslash\)}
+\DoxyCodeLine{        if (\_ok) tests\_passed++; \textcolor{keywordflow}{else} tests\_failed++; \(\backslash\)}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{test__vector_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{test__vector_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{test\_vector.cpp@{test\_vector.cpp}!main@{main}}
+\index{main@{main}!test\_vector.cpp@{test\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{test__vector_8cpp_a66f2cf1ed7047920940b2ac46dd81720}\label{test__vector_8cpp_a66f2cf1ed7047920940b2ac46dd81720}} 
+\index{test\_vector.cpp@{test\_vector.cpp}!test\_constructeur\_copie@{test\_constructeur\_copie}}
+\index{test\_constructeur\_copie@{test\_constructeur\_copie}!test\_vector.cpp@{test\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{test\_constructeur\_copie()}{test\_constructeur\_copie()}}
+{\footnotesize\ttfamily void test\+\_\+constructeur\+\_\+copie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{test__vector_8cpp_a41aa48850b650a7b0818256ba088bd0c}\label{test__vector_8cpp_a41aa48850b650a7b0818256ba088bd0c}} 
+\index{test\_vector.cpp@{test\_vector.cpp}!test\_constructeur\_deplacement@{test\_constructeur\_deplacement}}
+\index{test\_constructeur\_deplacement@{test\_constructeur\_deplacement}!test\_vector.cpp@{test\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{test\_constructeur\_deplacement()}{test\_constructeur\_deplacement()}}
+{\footnotesize\ttfamily void test\+\_\+constructeur\+\_\+deplacement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{test__vector_8cpp_abcd740c9afb61d692bed325b51d52781}\label{test__vector_8cpp_abcd740c9afb61d692bed325b51d52781}} 
+\index{test\_vector.cpp@{test\_vector.cpp}!test\_destructeur@{test\_destructeur}}
+\index{test\_destructeur@{test\_destructeur}!test\_vector.cpp@{test\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{test\_destructeur()}{test\_destructeur()}}
+{\footnotesize\ttfamily void test\+\_\+destructeur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{test__vector_8cpp_abf5ad0293edd987044597e8557d2424a}\label{test__vector_8cpp_abf5ad0293edd987044597e8557d2424a}} 
+\index{test\_vector.cpp@{test\_vector.cpp}!test\_enchainement\_regles@{test\_enchainement\_regles}}
+\index{test\_enchainement\_regles@{test\_enchainement\_regles}!test\_vector.cpp@{test\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{test\_enchainement\_regles()}{test\_enchainement\_regles()}}
+{\footnotesize\ttfamily void test\+\_\+enchainement\+\_\+regles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{test__vector_8cpp_a37abb1f4c6342a9c4c3c7b04470fd890}\label{test__vector_8cpp_a37abb1f4c6342a9c4c3c7b04470fd890}} 
+\index{test\_vector.cpp@{test\_vector.cpp}!test\_operateur\_affectation\_copie@{test\_operateur\_affectation\_copie}}
+\index{test\_operateur\_affectation\_copie@{test\_operateur\_affectation\_copie}!test\_vector.cpp@{test\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{test\_operateur\_affectation\_copie()}{test\_operateur\_affectation\_copie()}}
+{\footnotesize\ttfamily void test\+\_\+operateur\+\_\+affectation\+\_\+copie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{test__vector_8cpp_ad7a1e0a7053a593a7e41181593fdb9cd}\label{test__vector_8cpp_ad7a1e0a7053a593a7e41181593fdb9cd}} 
+\index{test\_vector.cpp@{test\_vector.cpp}!test\_operateur\_affectation\_deplacement@{test\_operateur\_affectation\_deplacement}}
+\index{test\_operateur\_affectation\_deplacement@{test\_operateur\_affectation\_deplacement}!test\_vector.cpp@{test\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{test\_operateur\_affectation\_deplacement()}{test\_operateur\_affectation\_deplacement()}}
+{\footnotesize\ttfamily void test\+\_\+operateur\+\_\+affectation\+\_\+deplacement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{test__vector_8cpp_aa00e6658e5e3c9af28808b1cbbcfa0b9}\label{test__vector_8cpp_aa00e6658e5e3c9af28808b1cbbcfa0b9}} 
+\index{test\_vector.cpp@{test\_vector.cpp}!test\_vecteur@{test\_vecteur}}
+\index{test\_vecteur@{test\_vecteur}!test\_vector.cpp@{test\_vector.cpp}}
+\doxysubsubsection{\texorpdfstring{test\_vecteur()}{test\_vecteur()}}
+{\footnotesize\ttfamily void test\+\_\+vecteur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+

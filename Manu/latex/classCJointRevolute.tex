@@ -1,0 +1,111 @@
+\hypertarget{classCJointRevolute}{}\doxysection{CJoint\+Revolute Class Reference}
+\label{classCJointRevolute}\index{CJointRevolute@{CJointRevolute}}
+
+
+Joint de type revolute (rotation)  
+
+
+
+
+{\ttfamily \#include $<$Cjoint\+Revolut.\+hpp$>$}
+
+
+
+Inheritance diagram for CJoint\+Revolute\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classCJointRevolute__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CJoint\+Revolute\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classCJointRevolute__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCJointRevolute_a97532fe6d9fe088eca4c16bdc197bccc}{CJoint\+Revolute}} (double q\+Min=-\/1e6, double q\+Max=1e6, double q=0, double dx=0)
+\item 
+\mbox{\hyperlink{Cbras_8hpp_acd7c3150c4fb02ee1b656c52e39d1282}{Mat4}} \mbox{\hyperlink{classCJointRevolute_ab69f3f5b8f17e5a06f44244b16fd0a0c}{get\+Transform}} () const override
+\item 
+std\+::string \mbox{\hyperlink{classCJointRevolute_ac65048016ba4d044c42a80cb30872639}{get\+Type\+Name}} () const override
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCJoint}{CJoint}} $>$ \mbox{\hyperlink{classCJointRevolute_a0532722be257b0681390a6ae01534aa6}{clone}} () const override
+\item 
+void \mbox{\hyperlink{classCJointRevolute_a96f4ad50ed63f4e805ebf3a689ec2d5e}{set\+Dx}} (double dx)
+\item 
+\mbox{\hyperlink{classCJointRevolute_a5a185da71bb86bf67c5b7fc7a17338e7}{$\sim$\+CJoint\+Revolute}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Joint de type revolute (rotation) 
+
+Hérite de \mbox{\hyperlink{classCJoint}{CJoint}}. Rotation autour de l\textquotesingle{}axe z. Possède un attribut supplémentaire dx\+\_\+ pour la longueur du lien. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCJointRevolute_a97532fe6d9fe088eca4c16bdc197bccc}\label{classCJointRevolute_a97532fe6d9fe088eca4c16bdc197bccc}} 
+\index{CJointRevolute@{CJointRevolute}!CJointRevolute@{CJointRevolute}}
+\index{CJointRevolute@{CJointRevolute}!CJointRevolute@{CJointRevolute}}
+\doxysubsubsection{\texorpdfstring{CJointRevolute()}{CJointRevolute()}}
+{\footnotesize\ttfamily CJoint\+Revolute\+::\+CJoint\+Revolute (\begin{DoxyParamCaption}\item[{double}]{q\+Min = {\ttfamily -\/1e6},  }\item[{double}]{q\+Max = {\ttfamily 1e6},  }\item[{double}]{q = {\ttfamily 0},  }\item[{double}]{dx = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classCJointRevolute_a5a185da71bb86bf67c5b7fc7a17338e7}\label{classCJointRevolute_a5a185da71bb86bf67c5b7fc7a17338e7}} 
+\index{CJointRevolute@{CJointRevolute}!````~CJointRevolute@{$\sim$CJointRevolute}}
+\index{````~CJointRevolute@{$\sim$CJointRevolute}!CJointRevolute@{CJointRevolute}}
+\doxysubsubsection{\texorpdfstring{$\sim$CJointRevolute()}{~CJointRevolute()}}
+{\footnotesize\ttfamily CJoint\+Revolute\+::$\sim$\+CJoint\+Revolute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCJointRevolute_a0532722be257b0681390a6ae01534aa6}\label{classCJointRevolute_a0532722be257b0681390a6ae01534aa6}} 
+\index{CJointRevolute@{CJointRevolute}!clone@{clone}}
+\index{clone@{clone}!CJointRevolute@{CJointRevolute}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCJoint}{CJoint}} $>$ CJoint\+Revolute\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classCJoint_a4c74f0f1ab9487e35506f4f97eb5d0db}{CJoint}}.
+
+\mbox{\Hypertarget{classCJointRevolute_ab69f3f5b8f17e5a06f44244b16fd0a0c}\label{classCJointRevolute_ab69f3f5b8f17e5a06f44244b16fd0a0c}} 
+\index{CJointRevolute@{CJointRevolute}!getTransform@{getTransform}}
+\index{getTransform@{getTransform}!CJointRevolute@{CJointRevolute}}
+\doxysubsubsection{\texorpdfstring{getTransform()}{getTransform()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Cbras_8hpp_acd7c3150c4fb02ee1b656c52e39d1282}{Mat4}} CJoint\+Revolute\+::get\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classCJoint_a9a2265032c56f275284c835b2c66adb7}{CJoint}}.
+
+\mbox{\Hypertarget{classCJointRevolute_ac65048016ba4d044c42a80cb30872639}\label{classCJointRevolute_ac65048016ba4d044c42a80cb30872639}} 
+\index{CJointRevolute@{CJointRevolute}!getTypeName@{getTypeName}}
+\index{getTypeName@{getTypeName}!CJointRevolute@{CJointRevolute}}
+\doxysubsubsection{\texorpdfstring{getTypeName()}{getTypeName()}}
+{\footnotesize\ttfamily std\+::string CJoint\+Revolute\+::get\+Type\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classCJoint_a1e0eab95eccfd71be5a6718f9de3577c}{CJoint}}.
+
+\mbox{\Hypertarget{classCJointRevolute_a96f4ad50ed63f4e805ebf3a689ec2d5e}\label{classCJointRevolute_a96f4ad50ed63f4e805ebf3a689ec2d5e}} 
+\index{CJointRevolute@{CJointRevolute}!setDx@{setDx}}
+\index{setDx@{setDx}!CJointRevolute@{CJointRevolute}}
+\doxysubsubsection{\texorpdfstring{setDx()}{setDx()}}
+{\footnotesize\ttfamily void CJoint\+Revolute\+::set\+Dx (\begin{DoxyParamCaption}\item[{double}]{dx }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{CjointRevolut_8hpp}{Cjoint\+Revolut.\+hpp}}\item 
+src/\mbox{\hyperlink{CjointRevolut_8cpp}{Cjoint\+Revolut.\+cpp}}\end{DoxyCompactItemize}

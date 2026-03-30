@@ -2,7 +2,13 @@
 #define CjointRevolut_HPP
 
 #include "CJoint.hpp"
-
+/**
+ * @class CJointRevolute
+ * @brief Joint de type revolute (rotation)
+ *
+ * @details Hérite de CJoint. Rotation autour de l'axe z.
+ * Possède un attribut supplémentaire dx_ pour la longueur du lien.
+ */
 class CJointRevolute : public CJoint{
     private:
         double dx_;

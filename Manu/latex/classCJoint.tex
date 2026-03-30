@@ -1,0 +1,157 @@
+\hypertarget{classCJoint}{}\doxysection{CJoint Class Reference}
+\label{classCJoint}\index{CJoint@{CJoint}}
+
+
+Classe abstraite représentant un joint générique.  
+
+
+
+
+{\ttfamily \#include $<$CJoint.\+hpp$>$}
+
+
+
+Inheritance diagram for CJoint\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{classCJoint__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for CJoint\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{classCJoint__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCJoint_af1aacb9b5e26f9fb722cca2943ff06d1}{CJoint}} ()
+\item 
+\mbox{\hyperlink{classCJoint_ae81a10e791ac835abc06d4530d8fdfd7}{CJoint}} (double q\+Min, double q\+Max, double q)
+\item 
+virtual \mbox{\hyperlink{Cbras_8hpp_acd7c3150c4fb02ee1b656c52e39d1282}{Mat4}} \mbox{\hyperlink{classCJoint_a9a2265032c56f275284c835b2c66adb7}{get\+Transform}} () const =0
+\item 
+virtual std\+::string \mbox{\hyperlink{classCJoint_a1e0eab95eccfd71be5a6718f9de3577c}{get\+Type\+Name}} () const =0
+\item 
+virtual std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCJoint}{CJoint}} $>$ \mbox{\hyperlink{classCJoint_a4c74f0f1ab9487e35506f4f97eb5d0db}{clone}} () const =0
+\item 
+double \mbox{\hyperlink{classCJoint_a38e617404b7f7aabbdd1b5d9c0282b36}{getQ}} () const
+\item 
+double \mbox{\hyperlink{classCJoint_a3eb30fd9bdb542c4941f515b038d463c}{get\+QMin}} () const
+\item 
+double \mbox{\hyperlink{classCJoint_a327fdedcb1ea15290cf9bfbf7959acb9}{get\+QMax}} () const
+\item 
+void \mbox{\hyperlink{classCJoint_a8b4ce28f0f5a680be041dceff56c10ee}{setQ}} (double q)
+\item 
+void \mbox{\hyperlink{classCJoint_a5fa2ed3464c8cbb8a0effb19cb9e0966}{set\+QMin}} (double qmin)
+\item 
+void \mbox{\hyperlink{classCJoint_a7f7a646955a9c9edb08824515f0b3d7e}{set\+QMax}} (double qmax)
+\item 
+virtual \mbox{\hyperlink{classCJoint_a1d5429f70369787c1a64e1bad89f0b7f}{$\sim$\+CJoint}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe abstraite représentant un joint générique. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCJoint_af1aacb9b5e26f9fb722cca2943ff06d1}\label{classCJoint_af1aacb9b5e26f9fb722cca2943ff06d1}} 
+\index{CJoint@{CJoint}!CJoint@{CJoint}}
+\index{CJoint@{CJoint}!CJoint@{CJoint}}
+\doxysubsubsection{\texorpdfstring{CJoint()}{CJoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily CJoint\+::\+CJoint (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCJoint_ae81a10e791ac835abc06d4530d8fdfd7}\label{classCJoint_ae81a10e791ac835abc06d4530d8fdfd7}} 
+\index{CJoint@{CJoint}!CJoint@{CJoint}}
+\index{CJoint@{CJoint}!CJoint@{CJoint}}
+\doxysubsubsection{\texorpdfstring{CJoint()}{CJoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily CJoint\+::\+CJoint (\begin{DoxyParamCaption}\item[{double}]{q\+Min,  }\item[{double}]{q\+Max,  }\item[{double}]{q }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCJoint_a1d5429f70369787c1a64e1bad89f0b7f}\label{classCJoint_a1d5429f70369787c1a64e1bad89f0b7f}} 
+\index{CJoint@{CJoint}!````~CJoint@{$\sim$CJoint}}
+\index{````~CJoint@{$\sim$CJoint}!CJoint@{CJoint}}
+\doxysubsubsection{\texorpdfstring{$\sim$CJoint()}{~CJoint()}}
+{\footnotesize\ttfamily virtual CJoint\+::$\sim$\+CJoint (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCJoint_a4c74f0f1ab9487e35506f4f97eb5d0db}\label{classCJoint_a4c74f0f1ab9487e35506f4f97eb5d0db}} 
+\index{CJoint@{CJoint}!clone@{clone}}
+\index{clone@{clone}!CJoint@{CJoint}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classCJoint}{CJoint}}$>$ CJoint\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classCJointRevolute_a0532722be257b0681390a6ae01534aa6}{CJoint\+Revolute}}, and \mbox{\hyperlink{classCJointPrismatic_ad696237394122550afe5788434ee2085}{CJoint\+Prismatic}}.
+
+\mbox{\Hypertarget{classCJoint_a38e617404b7f7aabbdd1b5d9c0282b36}\label{classCJoint_a38e617404b7f7aabbdd1b5d9c0282b36}} 
+\index{CJoint@{CJoint}!getQ@{getQ}}
+\index{getQ@{getQ}!CJoint@{CJoint}}
+\doxysubsubsection{\texorpdfstring{getQ()}{getQ()}}
+{\footnotesize\ttfamily double CJoint\+::getQ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classCJoint_a327fdedcb1ea15290cf9bfbf7959acb9}\label{classCJoint_a327fdedcb1ea15290cf9bfbf7959acb9}} 
+\index{CJoint@{CJoint}!getQMax@{getQMax}}
+\index{getQMax@{getQMax}!CJoint@{CJoint}}
+\doxysubsubsection{\texorpdfstring{getQMax()}{getQMax()}}
+{\footnotesize\ttfamily double CJoint\+::get\+QMax (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classCJoint_a3eb30fd9bdb542c4941f515b038d463c}\label{classCJoint_a3eb30fd9bdb542c4941f515b038d463c}} 
+\index{CJoint@{CJoint}!getQMin@{getQMin}}
+\index{getQMin@{getQMin}!CJoint@{CJoint}}
+\doxysubsubsection{\texorpdfstring{getQMin()}{getQMin()}}
+{\footnotesize\ttfamily double CJoint\+::get\+QMin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classCJoint_a9a2265032c56f275284c835b2c66adb7}\label{classCJoint_a9a2265032c56f275284c835b2c66adb7}} 
+\index{CJoint@{CJoint}!getTransform@{getTransform}}
+\index{getTransform@{getTransform}!CJoint@{CJoint}}
+\doxysubsubsection{\texorpdfstring{getTransform()}{getTransform()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{Cbras_8hpp_acd7c3150c4fb02ee1b656c52e39d1282}{Mat4}} CJoint\+::get\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classCJointRevolute_ab69f3f5b8f17e5a06f44244b16fd0a0c}{CJoint\+Revolute}}, and \mbox{\hyperlink{classCJointPrismatic_a65d92b544a729674500c3417f04eadd1}{CJoint\+Prismatic}}.
+
+\mbox{\Hypertarget{classCJoint_a1e0eab95eccfd71be5a6718f9de3577c}\label{classCJoint_a1e0eab95eccfd71be5a6718f9de3577c}} 
+\index{CJoint@{CJoint}!getTypeName@{getTypeName}}
+\index{getTypeName@{getTypeName}!CJoint@{CJoint}}
+\doxysubsubsection{\texorpdfstring{getTypeName()}{getTypeName()}}
+{\footnotesize\ttfamily virtual std\+::string CJoint\+::get\+Type\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classCJointRevolute_ac65048016ba4d044c42a80cb30872639}{CJoint\+Revolute}}, and \mbox{\hyperlink{classCJointPrismatic_a3fa2ae0db3188f4e21d1a9a4441f0bb5}{CJoint\+Prismatic}}.
+
+\mbox{\Hypertarget{classCJoint_a8b4ce28f0f5a680be041dceff56c10ee}\label{classCJoint_a8b4ce28f0f5a680be041dceff56c10ee}} 
+\index{CJoint@{CJoint}!setQ@{setQ}}
+\index{setQ@{setQ}!CJoint@{CJoint}}
+\doxysubsubsection{\texorpdfstring{setQ()}{setQ()}}
+{\footnotesize\ttfamily void CJoint\+::setQ (\begin{DoxyParamCaption}\item[{double}]{q }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCJoint_a7f7a646955a9c9edb08824515f0b3d7e}\label{classCJoint_a7f7a646955a9c9edb08824515f0b3d7e}} 
+\index{CJoint@{CJoint}!setQMax@{setQMax}}
+\index{setQMax@{setQMax}!CJoint@{CJoint}}
+\doxysubsubsection{\texorpdfstring{setQMax()}{setQMax()}}
+{\footnotesize\ttfamily void CJoint\+::set\+QMax (\begin{DoxyParamCaption}\item[{double}]{qmax }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCJoint_a5fa2ed3464c8cbb8a0effb19cb9e0966}\label{classCJoint_a5fa2ed3464c8cbb8a0effb19cb9e0966}} 
+\index{CJoint@{CJoint}!setQMin@{setQMin}}
+\index{setQMin@{setQMin}!CJoint@{CJoint}}
+\doxysubsubsection{\texorpdfstring{setQMin()}{setQMin()}}
+{\footnotesize\ttfamily void CJoint\+::set\+QMin (\begin{DoxyParamCaption}\item[{double}]{qmin }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{CJoint_8hpp}{CJoint.\+hpp}}\item 
+src/\mbox{\hyperlink{CJoint_8cpp}{CJoint.\+cpp}}\end{DoxyCompactItemize}

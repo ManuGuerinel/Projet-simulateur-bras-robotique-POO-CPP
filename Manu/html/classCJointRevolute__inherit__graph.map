@@ -1,0 +1,4 @@
+<map id="CJointRevolute" name="CJointRevolute">
+<area shape="rect" id="node1" title="Joint de type revolute (rotation)" alt="" coords="5,292,160,443"/>
+<area shape="rect" id="node2" href="$classCJoint.html" title="Classe abstraite représentant un joint générique." alt="" coords="14,5,151,244"/>
+</map>

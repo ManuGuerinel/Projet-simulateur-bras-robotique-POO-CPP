@@ -2,7 +2,12 @@
 #define CjointPrismatic_HPP
 
 #include "CJoint.hpp"
-
+/**
+ * @class CJointPrismatic
+ * @brief Joint de type prismatic (translation)
+ *
+ * @details Hérite de CJoint. Translation le long de l'axe z.
+ */
 class CJointPrismatic : public CJoint{
     private:
         // double dx_;  // Not used for prismatic joint
